@@ -192,10 +192,11 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 80px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(40px, 5vw, 80px);
     align-items: center;
   }
+  .hero-content { min-width: 0; max-width: 720px; }
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero-visual { max-width: 440px; margin: 0 auto; }
@@ -225,7 +226,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(48px, 7vw, 96px);
+    font-size: clamp(44px, 5.5vw, 80px);
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.03em;
@@ -889,7 +890,7 @@
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div>
+      <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="dot"></span>
           Open to new adventures · Based in Madrid
@@ -909,8 +910,8 @@
             <div class="stat-label">Leads generated as sole B2B marketer</div>
           </div>
           <div class="stat">
-            <div class="stat-number">€M+</div>
-            <div class="stat-label">Sales pipeline built</div>
+            <div class="stat-number">€10M+</div>
+            <div class="stat-label">Revenue influenced across roles</div>
           </div>
           <div class="stat">
             <div class="stat-number">1,000+</div>
@@ -990,7 +991,7 @@
               <div class="lbl">Qualified leads generated</div>
             </div>
             <div class="result-item">
-              <div class="num">€M+</div>
+              <div class="num">Multi-€M</div>
               <div class="lbl">Sales pipeline built</div>
             </div>
             <div class="result-item">
