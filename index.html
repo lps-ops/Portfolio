@@ -672,6 +672,102 @@
   .case-study.variant-2::before { background: radial-gradient(circle, var(--sunset), transparent 70%); opacity: 0.18; }
   .case-study.variant-3::before { background: radial-gradient(circle, var(--coral), transparent 70%); opacity: 0.2; }
 
+  /* Compact mini case (single column) */
+  .case-mini {
+    padding: clamp(28px, 4vw, 48px);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(98, 36, 158, 0.18), rgba(48, 25, 96, 0.25));
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-mini::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, var(--violet), transparent 70%);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .case-mini-meta {
+    position: relative; z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+    flex-wrap: wrap;
+  }
+  .case-mini-meta .role { color: var(--peach); }
+  .case-mini-headline {
+    position: relative; z-index: 1;
+    font-size: clamp(24px, 2.8vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    max-width: 800px;
+  }
+  .case-mini-headline em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--peach);
+  }
+  .case-mini-body {
+    position: relative; z-index: 1;
+    color: var(--dim);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 880px;
+  }
+  .case-mini-body strong {
+    color: var(--peach);
+    font-weight: 500;
+  }
+  .case-mini-tags {
+    position: relative; z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .mini-tag {
+    padding: 7px 14px;
+    border-radius: 100px;
+    background: rgba(255, 196, 140, 0.1);
+    border: 1px solid rgba(255, 196, 140, 0.3);
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--peach);
+  }
+  .mini-tag-quiet {
+    padding: 7px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+  }
+  .mini-tag-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border-strong);
+    margin: 0 4px;
+  }
+
   .case-meta {
     display: flex;
     align-items: center;
@@ -796,6 +892,24 @@
     overflow: hidden;
     border: 1px solid var(--border-strong);
     background: var(--midnight);
+  }
+
+  /* Inline case link (e.g. Signpost Six landing page) */
+  .case-link-note {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+  .case-link-note .case-inline-link {
+    color: var(--peach);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 196, 140, 0.3);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .case-link-note .case-inline-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--peach);
   }
   .image-grid {
     display: grid;
@@ -1321,7 +1435,7 @@
     <div class="section-header reveal">
       <div class="eyebrow">Selected work</div>
       <h2>Four stories, <em>four business models.</em></h2>
-      <p>B2B cybersecurity, consumer retail, sports media, and a product I'm building myself. Different markets, same playbook: turn marketing into a commercial system.</p>
+      <p>B2B cybersecurity, consumer retail, sports media, and a product I'm building myself. Different markets, same playbook: turn marketing into a commercial system. Plus a fintech detour you'll find at the end.</p>
     </div>
 
     <!-- Case Study 1: Signpost Six -->
@@ -1337,6 +1451,7 @@
         <h3>Built the whole marketing engine — and <em>learned every part of it.</em></h3>
         <p>Signpost Six is a niche B2B cybersecurity consultancy in a category most buyers don't know exists: insider risk. There was no commercial infrastructure, no content strategy, no demand engine when I joined — which meant I got to build (and learn) every piece of it.</p>
         <p>Over three years I built the full commercial system: HubSpot (lifecycle stages, dashboards, segmentation, workflows), a content and thought-leadership program (Insider Risk Trend Report, Self-Assessment Tool), and full-funnel campaigns that fed the pipeline. A lot of Googling, a lot of iterating, a lot of "let me figure out why this report won't pull the right data." I'm proud of the result — and probably more proud of how much I learned getting there.</p>
+        <p class="case-link-note">→ <a href="https://offers.signpostsix.com/insider-risk-trend-report-2026" target="_blank" rel="noopener" class="case-inline-link">View a landing page I built &amp; launched</a></p>
       </div>
       <div class="case-side">
         <div class="case-block">
@@ -1486,7 +1601,28 @@
       </div>
     </div>
 
-    <!-- Case Study 3: SetAway -->
+    <!-- Mini Case: Bunq -->
+    <div class="case-mini reveal">
+      <div class="case-mini-meta">
+        <span class="role">Country Marketer &amp; Partnerships</span>
+        <span class="divider"></span>
+        <span>Bunq</span>
+        <span class="divider"></span>
+        <span>2021</span>
+      </div>
+      <h3 class="case-mini-headline">Brought a Dutch fintech to <em>the German market.</em></h3>
+      <p class="case-mini-body">At Bunq I owned go-to-market for the German market — building visibility, brand trust, and acquisition partnerships in a fintech space where most consumers default to legacy banks. I focused on landing the right brand collaborations to introduce Bunq to a new audience: <strong>HelloFresh</strong> (everyday utility), <strong>Reebok</strong> (lifestyle and aspiration), and <strong>Clark</strong> (fintech-adjacent trust). Each partnership delivered audience reach and acquisition lift through a specific cultural lens — exactly the kind of work that taught me partnerships are positioning, not just pipeline.</p>
+      <div class="case-mini-tags">
+        <span class="mini-tag">HelloFresh</span>
+        <span class="mini-tag">Reebok</span>
+        <span class="mini-tag">Clark</span>
+        <span class="mini-tag-divider"></span>
+        <span class="mini-tag-quiet">German market</span>
+        <span class="mini-tag-quiet">Fintech</span>
+        <span class="mini-tag-quiet">Acquisition</span>
+      </div>
+    </div>
+
     <!-- Case Study 4: SetAway -->
     <div class="case-study variant-2 reveal">
       <div class="case-body">
